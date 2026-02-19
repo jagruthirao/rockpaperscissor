@@ -1,0 +1,15 @@
+fastapi
+uvicorn[standard]
+pydantic
+pydantic-settings
+python-multipart
+python-jose[cryptography]
+passlib[bcrypt]
+httpx
+astrapy
+sqlalchemy
+numpy
+tensorflow-cpu  # For VGG16 stub/demo without GPU overhead initially
+mediapipe
+Pillow
+python-dotenv
