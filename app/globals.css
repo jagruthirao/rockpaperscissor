@@ -1,0 +1,98 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Theme variables */
+:root {
+  --luxury-charcoal: #050505;
+  /* Deep Rich Black */
+  --luxury-surface: #0a0a0a;
+  /* Soft Black */
+  --luxury-cyan: #D4AF37;
+  /* METALLIC GOLD */
+  --luxury-gold: #C5A028;
+  /* Aged Gold for Depth */
+
+  --background: #000000;
+  --foreground: #FFFFF0;
+  /* IVORY / OFF-WHITE */
+
+  --font-sans: var(--font-inter);
+}
+
+/* Base styles */
+body {
+  @apply bg-[#000000] text-[#FFFFF0] antialiased selection:bg-[#D4AF37]/30 selection:text-white;
+}
+
+/* Custom utilities */
+@layer utilities {
+  .glass-panel {
+    @apply bg-[#0a0a0a]/80 backdrop-blur-xl border border-[#D4AF37]/20 shadow-2xl;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#D4AF37] via-[#F9F4E0] to-[#D4AF37];
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #000000;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #D4AF37;
+    border-radius: 10px;
+  }
+
+  /* ... fonts ... */
+  .font-playfair {
+    font-family: var(--font-playfair), serif;
+  }
+
+  .font-sans {
+    font-family: var(--font-inter), sans-serif;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Enhanced Animations - Golden Glow */
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes glow {
+
+    0%,
+    100% {
+      box-shadow: 0 0 5px rgba(212, 175, 55, 0.4), 0 0 10px rgba(212, 175, 55, 0.2);
+    }
+
+    50% {
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.7), 0 0 30px rgba(212, 175, 55, 0.4);
+    }
+  }
+
+  .animate-glow {
+    animation: glow 3s ease-in-out infinite;
+  }
+}
